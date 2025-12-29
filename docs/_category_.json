@@ -1,0 +1,10 @@
+{
+  "label": "Module 1: Robotic Nervous System (ROS 2)",
+  "position": 2,
+    "collapsible": true,
+    "collapsed": false,
+  "link": {
+    "type": "generated-index",
+    "description": "Learn about ROS 2 as the middleware nervous system for humanoid robots, covering core communication concepts and humanoid description."
+  }
+}

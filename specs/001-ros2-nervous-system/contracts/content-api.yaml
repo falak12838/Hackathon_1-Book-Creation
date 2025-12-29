@@ -1,0 +1,170 @@
+openapi: 3.0.0
+info:
+  title: ROS 2 Educational Content API
+  description: API specification for accessing ROS 2 educational content in the book
+  version: 1.0.0
+paths:
+  /modules:
+    get:
+      summary: List all available modules
+      responses:
+        '200':
+          description: List of available modules
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Module'
+  /modules/{moduleId}:
+    get:
+      summary: Get details about a specific module
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Module details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Module'
+  /modules/{moduleId}/chapters:
+    get:
+      summary: List chapters in a specific module
+      parameters:
+        - name: moduleId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: List of chapters in the module
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Chapter'
+  /chapters/{chapterId}:
+    get:
+      summary: Get content of a specific chapter
+      parameters:
+        - name: chapterId
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Chapter content
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Chapter'
+  /examples:
+    get:
+      summary: List all available examples
+      responses:
+        '200':
+          description: List of available examples
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Example'
+components:
+  schemas:
+    Module:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the module
+        title:
+          type: string
+          description: Title of the module
+        description:
+          type: string
+          description: Brief description of the module
+        targetAudience:
+          type: array
+          items:
+            type: string
+          description: List of target audiences for this module
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: Prerequisites for this module
+        learningObjectives:
+          type: array
+          items:
+            type: string
+          description: Learning objectives of the module
+        chapters:
+          type: array
+          items:
+            $ref: '#/components/schemas/Chapter'
+          description: Chapters included in this module
+    Chapter:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the chapter
+        title:
+          type: string
+          description: Title of the chapter
+        subtitle:
+          type: string
+          description: Optional subtitle for the chapter
+        contentPath:
+          type: string
+          description: Path to the chapter's content file
+        order:
+          type: integer
+          description: Order of this chapter within the module
+        learningGoals:
+          type: array
+          items:
+            type: string
+          description: Learning goals for this chapter
+        prerequisites:
+          type: array
+          items:
+            type: string
+          description: Prerequisites for this chapter
+        examples:
+          type: array
+          items:
+            $ref: '#/components/schemas/Example'
+          description: Examples included in this chapter
+    Example:
+      type: object
+      properties:
+        id:
+          type: string
+          description: Unique identifier for the example
+        title:
+          type: string
+          description: Title of the example
+        type:
+          type: string
+          description: Type of example (code, diagram, simulation)
+        description:
+          type: string
+          description: Description of what the example demonstrates
+        filePath:
+          type: string
+          description: Path to the example file
+        dependencies:
+          type: array
+          items:
+            type: string
+          description: Dependencies required for the example

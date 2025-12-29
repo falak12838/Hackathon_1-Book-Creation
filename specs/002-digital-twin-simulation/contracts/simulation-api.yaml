@@ -1,0 +1,82 @@
+# API Contract: Simulation Data Interface
+
+## Purpose
+This contract defines the interface for accessing simulation data and examples from the Digital Twin Simulation module.
+
+## Endpoints
+
+### GET /api/chapters
+Retrieve list of available chapters in the module
+
+**Response**:
+```json
+{
+  "chapters": [
+    {
+      "id": "physics-simulation-gazebo",
+      "title": "Physics Simulation with Gazebo",
+      "description": "Learn physics-based simulation with Gazebo",
+      "duration_hours": 4,
+      "prerequisites": ["basic_python", "ros2_fundamentals"]
+    },
+    {
+      "id": "digital-twins-hri-unity",
+      "title": "Digital Twins & HRI using Unity",
+      "description": "Create high-fidelity digital twins and HRI scenarios",
+      "duration_hours": 6,
+      "prerequisites": ["physics_simulation"]
+    },
+    {
+      "id": "sensor-simulation-validation",
+      "title": "Sensor Simulation & Validation",
+      "description": "Simulate sensors and validate outputs",
+      "duration_hours": 5,
+      "prerequisites": ["physics_simulation", "digital_twins"]
+    }
+  ]
+}
+```
+
+### GET /api/chapters/{chapterId}/content
+Retrieve content for a specific chapter
+
+**Response**:
+```json
+{
+  "chapterId": "physics-simulation-gazebo",
+  "title": "Physics Simulation with Gazebo",
+  "content": "# Chapter Content...\n...",
+  "examples": [
+    {
+      "name": "basic_humanoid_model",
+      "description": "Simple humanoid model with basic physics",
+      "path": "/examples/chapter1/basic_humanoid.sdf"
+    }
+  ],
+  "exercises": [
+    {
+      "id": "exercise-1",
+      "title": "Create Basic Humanoid Model",
+      "description": "Implement a simple humanoid model in Gazebo",
+      "difficulty": "beginner"
+    }
+  ]
+}
+```
+
+### GET /api/simulations/{simulationId}/data
+Retrieve simulation data for validation
+
+**Response**:
+```json
+{
+  "simulationId": "sensor-validation-001",
+  "timestamp": "2025-12-27T10:00:00Z",
+  "sensorData": {
+    "type": "lidar",
+    "values": [/* point cloud data */],
+    "accuracy": 0.95,
+    "expectedPattern": "/* expected pattern for validation */"
+  }
+}
+```

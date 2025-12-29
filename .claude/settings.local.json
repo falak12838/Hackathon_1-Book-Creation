@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node tests/urdf/test_urdf-validation.js)",
+      "Bash(npx docusaurus build)",
+      "Bash(npx create-docusaurus@latest website classic)",
+      "Bash(npx docusaurus serve --port 3003)",
+      "Bash(powershell Remove-Item \"C:\\\\Users\\\\Dell\\\\Desktop\\\\Hackathon_1 Book Creation\\\\frontend-book\\\\docs\\\\module-4\\\\mdx-example.mdx\" -Force)",
+      "Bash(python -c \"import sys; sys.path.insert\\(0, ''src''\\); from vla import SpeechProcessor, CommandInterpreter, ActionExecutor; print\\(''All VLA modules imported successfully''\\)\")",
+      "Bash(python -c \"\nimport sys\nsys.path.insert\\(0, ''src''\\)\n\n# Test imports\nfrom vla import SpeechProcessor, CommandInterpreter, ActionExecutor, IntegratedCognitivePlanner\nprint\\(''All modules imported successfully''\\)\n\n# Test CommandInterpreter\nci = CommandInterpreter\\(\\)\nresult = ci.interpret\\(''Move forward 1 meter''\\)\nprint\\(''Command interpretation works:'', result is not None\\)\n\n# Test ActionExecutor\nae = ActionExecutor\\(\\)\nstatus = ae.get_execution_status\\(\\)\nprint\\(''Action executor works:'', status[''execution_status'']\\)\n\n# Test basic functionality\ntest_commands = [''Go to kitchen'', ''Pick up cup'', ''Turn left'']\nfor cmd in test_commands:\n    result = ci.interpret\\(cmd\\)\n    print\\(''  Command \"\"{}\"\" -> {}''.format\\(cmd, result[''action_type''] if result else ''None''\\)\\)\n\nprint\\(''All VLA system components working correctly''\\)\n\")"
+    ]
+  }
+}

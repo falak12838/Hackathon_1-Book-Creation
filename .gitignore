@@ -1,0 +1,111 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+.ENV
+.venv/
+dist/
+build/
+*.egg-info/
+.eggs/
+.Pipfile.lock
+
+# Virtual environments
+.venv
+venv/
+env/
+ENV/
+
+# ROS 2
+*.log
+*.log.*
+log/
+.develspace/
+.installspace/
+.build/
+build_*/
+devel/
+install/
+*.cmake
+CTestTestfile.cmake
+
+# Docusaurus
+.docusaurus/
+node_modules/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.cache/
+.slate/
+.slate-cache/
+public/
+
+# Python
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+.ENV
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+.git/refs/replace/
+.pytest_cache/
+.pytest_cache/*
+.pytest_cache/**/*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# OpenAI and API keys
+openai_api_key
+api_key
+*.key
+secret*
+*.env
+
+# Testing
+coverage/
+htmlcov/
+.coverage
+.jupyter_releaser_cache/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Thumbs.db:encryptable

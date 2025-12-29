@@ -1,0 +1,105 @@
+openapi: 3.0.0
+info:
+  title: Educational Content API for NVIDIA Isaac Robotics
+  description: API for educational content related to NVIDIA Isaac ecosystem for humanoid robotics
+  version: 1.0.0
+
+paths:
+  /modules/3/isaac-sim:
+    get:
+      summary: Get Isaac Sim educational content
+      description: Retrieve educational content for NVIDIA Isaac Sim and synthetic data
+      responses:
+        '200':
+          description: Isaac Sim educational content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  module_id:
+                    type: string
+                    example: "module-3-isaac-sim"
+                  title:
+                    type: string
+                    example: "Introduction to NVIDIA Isaac Sim & Synthetic Data"
+                  content:
+                    type: string
+                    example: "# Isaac Sim Setup Guide\n\n## Installation\n..."
+                  examples:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        code:
+                          type: string
+
+  /modules/3/isaac-ros:
+    get:
+      summary: Get Isaac ROS educational content
+      description: Retrieve educational content for Isaac ROS perception and navigation
+      responses:
+        '200':
+          description: Isaac ROS educational content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  module_id:
+                    type: string
+                    example: "module-3-isaac-ros"
+                  title:
+                    type: string
+                    example: "Isaac ROS: Accelerated Perception, VSLAM, and Navigation"
+                  content:
+                    type: string
+                    example: "# Isaac ROS Perception\n\n## VSLAM Implementation\n..."
+                  examples:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        code:
+                          type: string
+
+  /modules/3/nav2:
+    get:
+      summary: Get Nav2 educational content
+      description: Retrieve educational content for Nav2 humanoid path planning
+      responses:
+        '200':
+          description: Nav2 educational content
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  module_id:
+                    type: string
+                    example: "module-3-nav2"
+                  title:
+                    type: string
+                    example: "Nav2 for Humanoid Path Planning and Movement"
+                  content:
+                    type: string
+                    example: "# Nav2 Path Planning\n\n## Humanoid Navigation\n..."
+                  examples:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        name:
+                          type: string
+                        description:
+                          type: string
+                        code:
+                          type: string

@@ -1,0 +1,28 @@
+# Python dependencies for Vision-Language-Action (VLA) system
+
+# ROS 2 dependencies (typically installed separately with ROS 2)
+# rclpy
+# std_msgs
+# sensor_msgs
+# geometry_msgs
+# action_msgs
+
+# OpenAI API client
+openai>=0.27.0
+
+# Environment variables
+python-dotenv>=0.19.0
+
+# System utilities
+psutil>=5.8.0
+
+# Audio processing (for real audio input)
+# pyaudio>=0.2.11  # Uncomment if using real microphone input
+# sounddevice>=0.4.2  # Uncomment if using real audio processing
+
+# Testing
+pytest>=6.0.0
+pytest-cov>=2.10.0
+
+# Type hints (optional)
+typing-extensions>=3.7.4
